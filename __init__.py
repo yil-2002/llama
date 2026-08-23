@@ -1,24 +1,8 @@
-"""Service layer for external integrations."""
+"""Data models for VPS Master Bot."""
 from __future__ import annotations
 
-from .docker_service import DockerService
-from .system_service import SystemService
-from .ollama_service import OllamaService
-from .jellyfin_service import JellyfinService
-from .gitea_service import GiteaService
-from .wireguard_service import WireguardService
-from .backup_service import BackupService
-from .nginx_service import NginxService
-from .auth_service import AuthService
+from .stats import SystemStats
+from .backup import BackupMeta, BackupStatus
+from .session import Session
 
-__all__ = [
-    "DockerService",
-    "SystemService",
-    "OllamaService",
-    "JellyfinService",
-    "GiteaService",
-    "WireguardService",
-    "BackupService",
-    "NginxService",
-    "AuthService",
-]
+__all__ = ["SystemStats", "BackupMeta", "BackupStatus", "Session"]
