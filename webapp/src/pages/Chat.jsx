@@ -27,7 +27,9 @@ export default function Chat({ me, go, refresh, mode }) {
       .finally(() => setBusy(false));
   }, [mode]);
 
-  useEffect(() => listEnd.current?.scrollIntoView({ behavior: "smooth" }), [messages, busy]);
+  useEffect(() => {
+    listEnd.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages, busy]);
 
   function handleError(e) {
     if (e.status === 402) return go("premium");
